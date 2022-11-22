@@ -12,7 +12,7 @@ namespace ToDo.Infra.Data.Repositories
         private readonly string connectionString;
         public ItemRepository(IConfiguration configuration)
         {
-            connectionString = configuration.GetConnectionString("ToDoDb");
+            connectionString = configuration?.GetConnectionString("ToDoDb");
         }
 
         public async Task<IEnumerable<Item>> GetAllAsync()
@@ -62,14 +62,13 @@ namespace ToDo.Infra.Data.Repositories
 
         public async Task EditAsync(Item item)
         {
-            var count = 0;
             var query = "update Items set Description = @Description, Done = @Done where id = @Id";
             using (var con = new SqlConnection(connectionString))
             {
                 try
                 {
                     con.Open();
-                    count = await con.ExecuteAsync(query, item);
+                    await con.ExecuteAsync(query, item);
                 }
                 catch (Exception)
                 {
