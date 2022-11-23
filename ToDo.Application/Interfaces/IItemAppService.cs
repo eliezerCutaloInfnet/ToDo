@@ -4,7 +4,7 @@ namespace ToDo.Application.Interfaces
 {
     public interface IItemAppService
     {
-        Task<IEnumerable<ItemResponse>> GetItemsAsync();
+        Task<IEnumerable<ItemResponseDto>> GetItemsAsync();
 
         Task CreateItemAsync(CreateItemRequestDto dto);
     }

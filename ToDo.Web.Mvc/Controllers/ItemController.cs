@@ -1,21 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ToDo.Domain.Entities;
-using ToDo.Domain.Interface;
-using ToDo.Web.Mvc.Models;
+using ToDo.Application.Dtos.Item;
+using ToDo.Application.Interfaces;
 
 namespace ToDo.Web.Mvc.Controllers
 {
     public class ItemController : Controller
     {
-        protected IItemRepository repository;
+        protected IItemAppService service;
 
-        public ItemController(IItemRepository repository)
+        public ItemController(IItemAppService service)
         {
-            this.repository = repository;
+            this.service = service;
         }
         public async Task<IActionResult> Index()
         {
-            var items = await repository.GetAllAsync();
+            var items = await service.GetItemsAsync();
 
             return View(items);
         }
@@ -26,12 +25,11 @@ namespace ToDo.Web.Mvc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Description")] CreateItemModel createItemModel)
+        public async Task<IActionResult> Create([Bind("Description")] CreateItemRequestDto createItemModel)
         {
             if (ModelState.IsValid)
             {
-                var item = new Item(createItemModel.Description);
-                await repository.AddAsync(item);
+                await service.CreateItemAsync(createItemModel);
                 return RedirectToAction(nameof(Index));
             }  
 

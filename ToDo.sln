@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Web.Mvc", "ToDo.Web.Mvc\ToDo.Web.Mvc.csproj", "{EF6D0F19-4AC4-42B1-B6E1-1E09EC6A2B88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Web.Mvc", "ToDo.Web.Mvc\ToDo.Web.Mvc.csproj", "{EF6D0F19-4AC4-42B1-B6E1-1E09EC6A2B88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Domain", "ToDo.Domain\ToDo.Domain.csproj", "{AD4A9B16-ACBE-4BED-A36A-F3055558BAF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Domain", "ToDo.Domain\ToDo.Domain.csproj", "{AD4A9B16-ACBE-4BED-A36A-F3055558BAF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Infra.Data", "ToDo.Infra.Data\ToDo.Infra.Data.csproj", "{230A534D-CB67-470F-9188-799DA3972F9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Infra.Data", "ToDo.Infra.Data\ToDo.Infra.Data.csproj", "{230A534D-CB67-470F-9188-799DA3972F9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Application", "ToDo.Application\ToDo.Application.csproj", "{B969C0C4-8984-4463-B5B5-815F915CD948}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Infra.IoC", "ToDo.CrossCuting.IoC\ToDo.Infra.IoC.csproj", "{340AF17D-1AF9-4126-A704-D82F65D7C0B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{230A534D-CB67-470F-9188-799DA3972F9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{230A534D-CB67-470F-9188-799DA3972F9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{230A534D-CB67-470F-9188-799DA3972F9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B969C0C4-8984-4463-B5B5-815F915CD948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B969C0C4-8984-4463-B5B5-815F915CD948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B969C0C4-8984-4463-B5B5-815F915CD948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B969C0C4-8984-4463-B5B5-815F915CD948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{340AF17D-1AF9-4126-A704-D82F65D7C0B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{340AF17D-1AF9-4126-A704-D82F65D7C0B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{340AF17D-1AF9-4126-A704-D82F65D7C0B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{340AF17D-1AF9-4126-A704-D82F65D7C0B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
