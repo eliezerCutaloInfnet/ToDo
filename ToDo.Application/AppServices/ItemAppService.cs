@@ -8,8 +8,8 @@ namespace ToDo.Application.AppServices
 {
     public class ItemAppService : IItemAppService
     {
-        private IItemRepository repository;
-        private IMapper mapper;
+        private readonly IItemRepository repository;
+        private readonly IMapper mapper;
         public ItemAppService(IItemRepository repository, IMapper mapper)
         {
             this.repository = repository;
